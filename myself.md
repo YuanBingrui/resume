@@ -7,32 +7,32 @@
 
 <div style="display: flex;justify-content: center;">
   <div style="display: flex;align-items:center;">
-    <img src="assets/phone-solid.svg" width="14px" style="padding-right: 4px">
+    <img src="docs/assets/phone-solid.svg" width="14px" style="padding-right: 4px">
     <span>13862057151</span>
   </div>
   ·
   <div style="display: flex;align-items:center;padding: 0 4px">
-    <img src="assets/envelope-solid.svg" width="14px" style="padding-right: 4px">
+    <img src="docs/assets/envelope-solid.svg" width="14px" style="padding-right: 4px">
     bingrui_yuan0721@163.com
   </div>
   ·
   <div style="display: flex;align-items:center;padding-left: 4px;">
-    <img src="assets/github-brands.svg" width="14px" style="padding-right: 4px">
+    <img src="docs/assets/github-brands.svg" width="14px" style="padding-right: 4px">
     <a href="https://github.com/YuanBingrui">YuanBingrui</a>
   </div>
 </div>
 
-## <div style="display: flex;align-items:center;"><img src="assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 个人信息 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 个人信息 </div>
 
 - 求职意向：前端开发工程师
 - 工作经验：5 年
 - 现工作地：苏州
 
-## <div style="display: flex;align-items:center;"><img src="assets/graduation-cap-solid.svg" width="30px" style="padding-right: 8px"> 教育经历 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/graduation-cap-solid.svg" width="30px" style="padding-right: 8px"> 教育经历 </div>
 
 - 本科，苏州大学，生物信息学专业，2013.9~2017.6
 
-## <div style="display: flex;align-items:center;"><img src="assets/tools-solid.svg" width="30px" style="padding-right: 8px"> 技能清单 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/tools-solid.svg" width="30px" style="padding-right: 8px"> 技能清单 </div>
 
 - 熟练使用 `ReactJs`, `Vuejs` 等, 并对 `ReactJs` 相关的一些技术点有着基本的了解，比如 `key` 的作用，组件性能优化等
 - 熟练使用 `Typescript` 开发项目
@@ -44,7 +44,7 @@
 - 了解持续集成，使用过 `gitlab` 和 `github` `ci`
 - 熟练使用 `docker` 容器，可独立编写镜像配置文件并实现镜像的打包
 
-## <div style="display: flex;align-items:center;"><img src="assets/briefcase-solid.svg" width="30px" style="padding-right: 8px"> 工作经历 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/briefcase-solid.svg" width="30px" style="padding-right: 8px"> 工作经历 </div>
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
     <h5>苏州喔噻互联网科技有限公司</h5>
@@ -66,7 +66,7 @@
   > 3. 开发供公司内部使用的 `vue` 组件库
   > 4. 后期开发维护公司的所有前端项目
 
-## <div style="display: flex;align-items:center;"><img src="assets/project-diagram-solid.svg" width="30px" style="padding-right: 8px"> 项目经历 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/project-diagram-solid.svg" width="30px" style="padding-right: 8px"> 项目经历 </div>
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
     <h4><code>CRM</code> 系统及 <code>B</code> 端 <code>H5</code></h4>
@@ -145,7 +145,7 @@
 
   ***
 
-## <div style="display: flex;align-items:center;"><img src="assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 爱好与分享 </div>
+## <div style="display: flex;align-items:center;"><img src="docs/assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 爱好与分享 </div>
 
 - 看书,《明朝那些事儿》《平凡的世界》《三体》《解忧杂货店》《大秦帝国》《你不知道的 javascript 上/中/下》等都是我读过很棒的书
 - 跑步，健身，打羽毛球，半马最好成绩 1 小时 50 分钟
