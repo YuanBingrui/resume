@@ -1,28 +1,26 @@
-<div style="display: flex;justify-content: space-between;">
-  <span style="font-size: 24px;font-weight: 600;">袁秉瑞</span>
-  <span style="border: 1px solid #000;padding: 2px 10px;height: 24px;"><a href="yuanbingrui.pdf">pdf</a></span>
+<div style="display: flex;justify-content: space-between;align-items:center;">
+  <h2>袁秉瑞</h2>
+  <a href="yuanbingrui.pdf">pdf</a>
 </div>
 
 ---
 
-<center>
-  <div style="display: flex;justify-content: center;">
-    <div style="display: flex;align-items:center;">
-      <img src="assets/phone-solid.svg" width="14px" style="padding-right: 4px">
-      <span>13862057151</span>
-    </div>
-    ·
-    <div style="display: flex;align-items:center;padding: 0 4px">
-      <img src="assets/envelope-solid.svg" width="14px" style="padding-right: 4px">
-      bingrui_yuan0721@163.com
-    </div>
-    ·
-    <div style="display: flex;align-items:center;padding-left: 4px;">
-      <img src="assets/github-brands.svg" width="14px" style="padding-right: 4px">
-      <a href="https://github.com/YuanBingrui">YuanBingrui</a>
-    </div>
+<div style="display: flex;justify-content: center;">
+  <div style="display: flex;align-items:center;">
+    <img src="assets/phone-solid.svg" width="14px" style="padding-right: 4px">
+    <span>13862057151</span>
   </div>
-</center>
+  ·
+  <div style="display: flex;align-items:center;padding: 0 4px">
+    <img src="assets/envelope-solid.svg" width="14px" style="padding-right: 4px">
+    bingrui_yuan0721@163.com
+  </div>
+  ·
+  <div style="display: flex;align-items:center;padding-left: 4px;">
+    <img src="assets/github-brands.svg" width="14px" style="padding-right: 4px">
+    <a href="https://github.com/YuanBingrui">YuanBingrui</a>
+  </div>
+</div>
 
 ## <div style="display: flex;align-items:center;"><img src="assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 个人信息 </div>
 
