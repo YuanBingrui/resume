@@ -1,2 +1,3 @@
 # resume
-[myself](myself.md)
+
+[myself](docs/index.md)
