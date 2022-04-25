@@ -1,12 +1,12 @@
-<div style="display: flex; justify-content: space-between;">
-  <span style="font-size: 24px; font-weight: 600">袁秉瑞</span>
-  <span style="border: 1px solid #000; padding: 2px 10px; height: 24px"><a href="yuanbingrui.pdf">pdf</a></span>
+<div style="display: flex;justify-content: space-between;">
+  <span style="font-size: 24px;font-weight: 600;">袁秉瑞</span>
+  <span style="border: 1px solid #000;padding: 2px 10px;height: 24px;"><a href="yuanbingrui.pdf">pdf</a></span>
 </div>
 
 ---
 
 <center>
-  <div style="display: flex; justify-content: center;">
+  <div style="display: flex;justify-content: center;">
     <div style="display: flex;align-items:center;">
       <img src="assets/phone-solid.svg" width="14px" style="padding-right: 4px">
       <span>13862057151</span>
