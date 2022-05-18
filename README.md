@@ -140,9 +140,3 @@
   2. [`vue-generate-cli`](https://github.com/YuanBingrui/vue-generate-cli) 自动生成 `vue` 模版文件的 `cli`，这个项目主要是在 `vue` 刚出来时，自带的脚手架并没有提供类似的功能，所以就自己动手开发了一个，并开源出来。
 
   ***
-
-## <div style="display: flex;align-items:center;"><img src="docs/assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 爱好与分享 </div>
-
-- 看书,《明朝那些事儿》《平凡的世界》《三体》《解忧杂货店》《大秦帝国》《你不知道的 javascript 上/中/下》等都是我读过很棒的书
-- 跑步，健身，打羽毛球，半马最好成绩 1 小时 50 分钟
-- 写代码
