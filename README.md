@@ -43,8 +43,8 @@
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/briefcase-solid.svg" width="30px" style="padding-right: 8px"> 工作经历 </div>
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
-    <h5>苏州喔噻互联网科技有限公司</h5>
-    2018.09-2022.4(至今)
+    <h5>收钱吧</h5>
+    2018.09-2022.6(至今)
   </div>
 
   > 1. 开发维护发布系统 `bingo`
