@@ -1,528 +1,662 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>myself.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <head>
+    <title>myself.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
+    <style>
+      /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+      /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
+      body {
+        font-family: var(
+          --vscode-markdown-font-family,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe WPC',
+          'Segoe UI',
+          'Ubuntu',
+          'Droid Sans',
+          sans-serif
+        );
+        font-size: var(--vscode-markdown-font-size, 14px);
+        padding: 0 26px;
+        line-height: var(--vscode-markdown-line-height, 22px);
+        word-wrap: break-word;
+      }
 
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
+      #code-csp-warning {
+        position: fixed;
+        top: 0;
+        right: 0;
+        color: white;
+        margin: 16px;
+        text-align: center;
+        font-size: 12px;
+        font-family: sans-serif;
+        background-color: #444444;
+        cursor: pointer;
+        padding: 6px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      }
 
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
+      #code-csp-warning:hover {
+        text-decoration: none;
+        background-color: #007acc;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+      }
 
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
+      body.scrollBeyondLastLine {
+        margin-bottom: calc(100vh - 22px);
+      }
 
-body.showEditorSelection .code-line {
-	position: relative;
-}
+      body.showEditorSelection .code-line {
+        position: relative;
+      }
 
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
+      body.showEditorSelection .code-active-line:before,
+      body.showEditorSelection .code-line:hover:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -12px;
+        height: 100%;
+      }
 
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
+      body.showEditorSelection li.code-active-line:before,
+      body.showEditorSelection li.code-line:hover:before {
+        left: -30px;
+      }
 
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
+      .vscode-light.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.15);
+      }
 
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
+      .vscode-light.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.4);
+      }
 
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
+      .vscode-light.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
 
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
+      .vscode-dark.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.4);
+      }
 
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
+      .vscode-dark.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.6);
+      }
 
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
+      .vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
 
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
+      .vscode-high-contrast.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 160, 0, 0.7);
+      }
 
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
+      .vscode-high-contrast.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 160, 0, 1);
+      }
 
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
+      .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
 
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
 
-a {
-	text-decoration: none;
-}
+      a {
+        text-decoration: none;
+      }
 
-a:hover {
-	text-decoration: underline;
-}
+      a:hover {
+        text-decoration: underline;
+      }
 
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
+      a:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 1px solid -webkit-focus-ring-color;
+        outline-offset: -1px;
+      }
 
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
+      hr {
+        border: 0;
+        height: 2px;
+        border-bottom: 2px solid;
+      }
 
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
+      h1 {
+        padding-bottom: 0.3em;
+        line-height: 1.2;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
 
-h1, h2, h3 {
-	font-weight: normal;
-}
+      h1,
+      h2,
+      h3 {
+        font-weight: normal;
+      }
 
-table {
-	border-collapse: collapse;
-}
+      table {
+        border-collapse: collapse;
+      }
 
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
+      table > thead > tr > th {
+        text-align: left;
+        border-bottom: 1px solid;
+      }
 
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
+      table > thead > tr > th,
+      table > thead > tr > td,
+      table > tbody > tr > th,
+      table > tbody > tr > td {
+        padding: 5px 10px;
+      }
 
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
+      table > tbody > tr + tr > td {
+        border-top: 1px solid;
+      }
 
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
+      blockquote {
+        margin: 0 7px 0 5px;
+        padding: 0 16px 0 10px;
+        border-left-width: 5px;
+        border-left-style: solid;
+      }
 
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
+      code {
+        font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', monospace,
+          'Droid Sans Fallback';
+        font-size: 1em;
+        line-height: 1.357em;
+      }
 
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
+      body.wordWrap pre {
+        white-space: pre-wrap;
+      }
 
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
+      pre:not(.hljs),
+      pre.hljs code > div {
+        padding: 16px;
+        border-radius: 3px;
+        overflow: auto;
+      }
 
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
+      pre code {
+        color: var(--vscode-editor-foreground);
+        tab-size: 4;
+      }
 
-/** Theming */
+      /** Theming */
 
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
+      .vscode-light pre {
+        background-color: rgba(220, 220, 220, 0.4);
+      }
 
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
+      .vscode-dark pre {
+        background-color: rgba(10, 10, 10, 0.4);
+      }
 
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
+      .vscode-high-contrast pre {
+        background-color: rgb(0, 0, 0);
+      }
 
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
+      .vscode-high-contrast h1 {
+        border-color: rgb(0, 0, 0);
+      }
 
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
+      .vscode-light table > thead > tr > th {
+        border-color: rgba(0, 0, 0, 0.69);
+      }
 
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
+      .vscode-dark table > thead > tr > th {
+        border-color: rgba(255, 255, 255, 0.69);
+      }
 
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
+      .vscode-light h1,
+      .vscode-light hr,
+      .vscode-light table > tbody > tr + tr > td {
+        border-color: rgba(0, 0, 0, 0.18);
+      }
 
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
+      .vscode-dark h1,
+      .vscode-dark hr,
+      .vscode-dark table > tbody > tr + tr > td {
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+    </style>
 
-</style>
+    <style>
+      /* Tomorrow Theme */
+      /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+      /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+      /* Tomorrow Comment */
+      .hljs-comment,
+      .hljs-quote {
+        color: #8e908c;
+      }
 
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
+      /* Tomorrow Red */
+      .hljs-variable,
+      .hljs-template-variable,
+      .hljs-tag,
+      .hljs-name,
+      .hljs-selector-id,
+      .hljs-selector-class,
+      .hljs-regexp,
+      .hljs-deletion {
+        color: #c82829;
+      }
 
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
+      /* Tomorrow Orange */
+      .hljs-number,
+      .hljs-built_in,
+      .hljs-builtin-name,
+      .hljs-literal,
+      .hljs-type,
+      .hljs-params,
+      .hljs-meta,
+      .hljs-link {
+        color: #f5871f;
+      }
 
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
+      /* Tomorrow Yellow */
+      .hljs-attribute {
+        color: #eab700;
+      }
 
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
+      /* Tomorrow Green */
+      .hljs-string,
+      .hljs-symbol,
+      .hljs-bullet,
+      .hljs-addition {
+        color: #718c00;
+      }
 
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
+      /* Tomorrow Blue */
+      .hljs-title,
+      .hljs-section {
+        color: #4271ae;
+      }
 
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
+      /* Tomorrow Purple */
+      .hljs-keyword,
+      .hljs-selector-tag {
+        color: #8959a8;
+      }
 
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
+      .hljs {
+        display: block;
+        overflow-x: auto;
+        color: #4d4d4c;
+        padding: 0.5em;
+      }
 
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
+      .hljs-emphasis {
+        font-style: italic;
+      }
 
-.hljs-emphasis {
-	font-style: italic;
-}
+      .hljs-strong {
+        font-weight: bold;
+      }
+    </style>
 
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
+    <style>
+      /*
  * Markdown PDF CSS
  */
 
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu',
+          'Droid Sans', sans-serif, 'Meiryo';
+        padding: 0 12px;
+      }
 
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
+      pre {
+        background-color: #f8f8f8;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
 
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
+      pre:not(.hljs) {
+        padding: 23px;
+        line-height: 19px;
+      }
 
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
+      blockquote {
+        background: rgba(127, 127, 127, 0.1);
+        border-color: rgba(0, 122, 204, 0.5);
+      }
 
-.emoji {
-	height: 1.4em;
-}
+      .emoji {
+        height: 1.4em;
+      }
 
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
+      code {
+        font-size: 14px;
+        line-height: 19px;
+      }
 
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
+      /* for inline code */
+      :not(pre):not(.hljs) > code {
+        color: #c9ae75; /* Change the old color so it seems less like an error */
+        font-size: inherit;
+      }
 
-/* Page Break : use <div class="page"/> to insert page break
+      /* Page Break : use <div class="page"/> to insert page break
 -------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
+      .page {
+        page-break-after: always;
+      }
+    </style>
 
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h2>袁秉瑞</h2>
-  <a href="yuanbingrui.pdf">pdf</a>
-</div>
-<hr>
-<div style="display: flex;justify-content: center;">
-  <div style="display: flex;align-items:center;">
-    <img src="docs/assets/phone-solid.svg" width="14px" style="padding-right: 4px">
-    <span>13862057151</span>
-  </div>
-  ·
-  <div style="display: flex;align-items:center;padding: 0 4px">
-    <img src="docs/assets/envelope-solid.svg" width="14px" style="padding-right: 4px">
-    bingrui_yuan0721@163.com
-  </div>
-  ·
-  <div style="display: flex;align-items:center;padding-left: 4px;">
-    <img src="docs/assets/github-brands.svg" width="14px" style="padding-right: 4px">
-    <a href="https://github.com/YuanBingrui">YuanBingrui</a>
-  </div>
-</div>
-<h2 id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsinfo-circle-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-div"><div style="display: flex;align-items:center;"><img src="docs/assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 个人信息 </div></h2>
-<ul>
-<li>求职意向：前端开发工程师</li>
-<li>工作经验：6 年</li>
-<li>现工作地：苏州</li>
-</ul>
-<h2 id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsgraduation-cap-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E6%95%99%E8%82%B2%E7%BB%8F%E5%8E%86-div"><div style="display: flex;align-items:center;"><img src="docs/assets/graduation-cap-solid.svg" width="30px" style="padding-right: 8px"> 教育经历 </div></h2>
-<ul>
-<li>本科，苏州大学，生物信息学专业，2013.9~2017.6</li>
-</ul>
-<h2 id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetstools-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95-div"><div style="display: flex;align-items:center;"><img src="docs/assets/tools-solid.svg" width="30px" style="padding-right: 8px"> 技能清单 </div></h2>
-<ul>
-<li>熟练使用 <code>ReactJs</code>, <code>Vuejs</code> 等, 并对 <code>ReactJs</code> 相关的一些技术点有着基本的了解，比如 <code>key</code> 的作用，组件性能优化等</li>
-<li>熟练使用 <code>Typescript</code> 开发项目</li>
-<li>熟练使用 <code>react-router</code>, <code>vue-router</code> 等 <code>spa</code> 路由库，并对原理有基本的了解</li>
-<li>熟练使用 <code>redux</code>, <code>dva</code> (基于 <code>redux</code> 和 <code>react-router</code> ), <code>jotai</code>等状态管理库，并对 <code>redux</code> 的原理基本的了解</li>
-<li>熟练使用<code>css</code>框架<code>tailwindcss</code>, 预处理库<code>less</code>, <code>sass</code>等</li>
-<li>熟练使用 <code>webpack</code>, <code>gulp</code>, <code>rollup</code>, <code>vite</code> 等打包工具，并对其原理有基本的了解</li>
-<li>熟练使用 <code>nodejs</code>, 及基于<code>nodejs</code>的服务端框架 <code>koa</code>，并且具备编写脚手架的能力</li>
-<li>熟悉 <code>http</code>, <code>https</code> 等网络相关的知识</li>
-<li>了解持续集成，使用过 <code>gitlab</code> 和 <code>github</code> <code>ci</code></li>
-<li>熟练使用 <code>docker</code> 容器，可独立编写镜像配置文件并实现镜像的打包</li>
-</ul>
-<h2 id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsbriefcase-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86-div"><div style="display: flex;align-items:center;"><img src="docs/assets/briefcase-solid.svg" width="30px" style="padding-right: 8px"> 工作经历 </div></h2>
-<ul>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h5>收钱吧</h5>
-  2018.09-2023.3(至今)
-</div>
-<blockquote>
-<ol>
-<li>开发维护发布系统 <code>bingo</code></li>
-<li>开发维护 <code>CRM</code> 相关的系统，包括 <code>H5</code> 和 <code>pc</code> 端的项目</li>
-<li>开发维护 <code>B</code> 端 <code>H5</code>与微信小程序项目</li>
-<li>开发维护运营平台</li>
-<li>带实习生</li>
-</ol>
-</blockquote>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h5>苏州罗想软件股份有限公司</h5>
-  2016.11-2018.09
-</div>
-<blockquote>
-<ol>
-<li>负责公司的移动端 <code>app</code> 项目的开发(利用 <code>hybrid</code> 技术)</li>
-<li>开发维护移动端项目</li>
-<li>开发供公司内部使用的 <code>vue</code> 组件库</li>
-<li>后期开发维护公司的所有前端项目</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-<h2 id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsproject-diagram-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86-div"><div style="display: flex;align-items:center;"><img src="docs/assets/project-diagram-solid.svg" width="30px" style="padding-right: 8px"> 项目经历 </div></h2>
-<ul>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4><code>CRM</code> 系统及 <code>B</code> 端 <code>H5</code></h4>
-  2019.12-2023.03(至今)
-</div>
-<blockquote>
-<p>技术 : <code>react</code>, <code>dva</code>, <code>nextjs</code>, <code>ts</code>, <code>antd</code> 等</p>
-</blockquote>
-<p><code>crm</code> 系统包括移动端的 <code>h5</code> 项目，<code>pc</code> 端的 <code>spa</code> 项目。<code>spa</code> 项目就是简单的在 <code>cra</code> 脚手架的基础上创建的项目，添加了自动上传静态资源到 <code>oss</code> 的功能等。<code>h5</code> 项目是基于 <code>nextjs</code> 创建的 <code>ssr</code> 项目，通过 <code>webview</code> 内嵌于 <code>app</code> 内，添加了自动上传静态资源到 <code>oss</code> 功能；将服务的协议改成 <code>http2</code> ；接入性能及错误监控平台 <code>sentry</code> ；优化了图标（将原先的图片和字体图标变成了 <code>svg sprite</code>）；添加高清方案；优化了开发体验（自动获取当前 <code>ip</code> ，自动打开浏览器等）。项目都是基于 <code>ts</code> 开发，并通过 <code>docker</code> 和 <code>gitlab ci</code> 实现持续集成及自动发布。<code>B</code> 端同 <code>crm</code> 的 <code>h5</code> 项目。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4>运营平台</h4>
-  2019.12-2023.03(至今)
-</div>
-<blockquote>
-<p>技术 : <code>react</code>, <code>umi</code>, <code>eggjs</code>, <code>antd</code>, <code>amap</code> 等</p>
-</blockquote>
-<p>运营平台是传统的 <code>spa</code> 项目，并通过 <code>eggjs</code> 创建代理服务。项目是传统的管理平台，其中比较有挑战的是，结合 <code>amap</code> 实现的一些业务需求（如片区划分，地图模式派工功能等）；图片裁截功能（基于 <code>cropperjs</code> 实现）。通过 <code>docker</code> 和 <code>gitlab ci</code> 实现持续集成及自动发布。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4><code>bingo</code> 发布系统</h4>
-  2018.11-2019.01
-</div>
-<blockquote>
-<p>技术 : <code>react</code>, <code>antd</code>, <code>eggjs</code> 等</p>
-</blockquote>
-<p><code>bingo</code> 是基于 <code>k8s</code> 的集成发布系统，解决了项目发布的时间不灵活，有损，及无法灰度等问题。项目中主要负责前端界面及与数据库的交互（项目为 <code>nodejs</code> 项目），与 <code>k8s</code> 服务交互由 <code>java</code> 提供接口，同时针对页面渲染耗时问题做了 <code>webpakc</code> 打包优化等。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4>通融铸造 <code>MES</code> 项目 <code>app</code> 开发</h4>
-  2018.04-2018.08
-</div>
-<blockquote>
-<p>技术 : <code>ionic</code>, <code>cordova</code> 等</p>
-</blockquote>
-<p>利用 <code>hybrid</code> 技术，开发与金属冶炼工作流反馈相关的工业平板 <code>app</code>。项目中负责整个前端界面的开发，并对项目做了一些优化，如将公共的部分组件化，模块化等，同时将数据与模板分离，方便后期更新与维护。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4>公司 <code>ERP</code> 系统 <code>PWA</code> 和微信小程序项目</h4>
-  2018.06-2018.07
-</div>
-<blockquote>
-<p>技术 : <code>PWA</code> 和微信小程序相关技术</p>
-</blockquote>
-<p>利用 <code>PWA</code> 和微信小程序技术栈，开发公司 <code>ERP</code> 系统的 <code>PWA</code> 和微信小程序应用。项目中负责整个前端界面的开发，通过项目对 <code>PWA</code> 和微信小程序相关技术有了一个基本的了解。这两个项目目主要是做一个技术储备。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4>公司内部的 <code>vue</code> 组件库</h4>
-  2017.11-2018.05
-</div>
-<blockquote>
-<p>技术 : <code>vue</code>, <code>threejs</code>, <code>canvas</code> 等</p>
-</blockquote>
-<p>因项目需要，但目前已有的组件库引用及使用不友好，所以开发供公司内部使用的 <code>vue</code> 组件库，以提高开发效率，及增加可维护性。如事件日历组件，悬浮球功能组件，<code>3D</code> 全景组件，图片合成组件等。</p>
-<hr>
-</li>
-<li>
-<div style="display: flex;justify-content: space-between;align-items:center;">
-  <h4>个人开源项目</h4>
-</div>
-<blockquote>
-<p>技术 : <code>react</code>, <code>webpack</code>, <code>rollup</code>, <code>gulp</code>, <code>vue</code>, <code>ts</code>, <code>nodejs</code>, <code>lerna</code>, <code>picocolors</code>, <code>cross-spawn</code> 等</p>
-</blockquote>
-<ol>
-<li><a href="https://github.com/YuanBingrui/open-browser"><code>open-browser</code></a> 是一个在开发环境服务启动成功后自动打开浏览器的插件，增加了自动获取局域网<code>ip</code>地址的功能, 以及对<code>penChrome.applescript</code>脚本的增强。</li>
-<li><a href="https://github.com/YuanBingrui/floating-ball"><code>floating-ball</code></a> 是一个类似于移动端原生的辅助触控的 <code>web</code> 端实现，目前提供了 <code>react</code> 和 <code>vue</code> 版本的组件。项目是基于 <code>lerna</code> 创建的 <code>monorepos</code>, 包括 <code>core</code>, 然后基于 <code>core</code> 实现的 <code>react</code>, <code>vue</code> 三个 <code>packages</code>, 利用 <code>ts</code> 开发，并通过 <code>rollup</code> 和 <code>gulp</code> 打包，并添加了 <code>github ci</code> 持续集成及自动发布到 <code>npm</code> 仓库功能。</li>
-<li><a href="https://github.com/YuanBingrui/vue-generate-cli"><code>vue-generate-cli</code></a> 自动生成 <code>vue</code> 模版文件的 <code>cli</code>，这个项目主要是在 <code>vue</code> 刚出来时，自带的脚手架并没有提供类似的功能，所以就自己动手开发了一个，并开源出来。</li>
-</ol>
-</li>
-</ul>
-
-</body>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme:
+          document.body.classList.contains('vscode-dark') ||
+          document.body.classList.contains('vscode-high-contrast')
+            ? 'dark'
+            : 'default',
+      });
+    </script>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <h2>袁秉瑞</h2>
+      <a href="yuanbingrui.pdf">pdf</a>
+    </div>
+    <hr />
+    <div style="display: flex; justify-content: center">
+      <div style="display: flex; align-items: center">
+        <img src="assets/phone-solid.svg" width="14px" style="padding-right: 4px" />
+        <span>13862057151</span>
+      </div>
+      ·
+      <div style="display: flex; align-items: center; padding: 0 4px">
+        <img src="assets/envelope-solid.svg" width="14px" style="padding-right: 4px" />
+        bingrui_yuan0721@163.com
+      </div>
+      ·
+      <div style="display: flex; align-items: center; padding-left: 4px">
+        <img src="assets/github-brands.svg" width="14px" style="padding-right: 4px" />
+        <a href="https://github.com/YuanBingrui">YuanBingrui</a>
+      </div>
+    </div>
+    <h2
+      id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsinfo-circle-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-div"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="assets/info-circle-solid.svg" width="30px" style="padding-right: 8px" /> 个人信息
+      </div>
+    </h2>
+    <ul>
+      <li>求职意向：前端开发工程师</li>
+      <li>工作经验：6 年</li>
+      <li>现工作地：苏州</li>
+    </ul>
+    <h2
+      id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsgraduation-cap-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E6%95%99%E8%82%B2%E7%BB%8F%E5%8E%86-div"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="assets/graduation-cap-solid.svg" width="30px" style="padding-right: 8px" />
+        教育经历
+      </div>
+    </h2>
+    <ul>
+      <li>本科，苏州大学，生物信息学专业，2013.9~2017.6</li>
+    </ul>
+    <h2
+      id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetstools-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95-div"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="assets/tools-solid.svg" width="30px" style="padding-right: 8px" /> 技能清单
+      </div>
+    </h2>
+    <ul>
+      <li>
+        熟练使用 <code>ReactJs</code>, <code>Vuejs</code> 等, 并对
+        <code>ReactJs</code> 相关的一些技术点有着基本的了解，比如
+        <code>key</code> 的作用，组件性能优化等
+      </li>
+      <li>熟练使用 <code>Typescript</code> 开发项目</li>
+      <li>
+        熟练使用 <code>react-router</code>, <code>vue-router</code> 等
+        <code>spa</code> 路由库，并对原理有基本的了解
+      </li>
+      <li>
+        熟练使用 <code>redux</code>, <code>dva</code> (基于 <code>redux</code> 和
+        <code>react-router</code> ), <code>jotai</code>等状态管理库，并对
+        <code>redux</code> 的原理基本的了解
+      </li>
+      <li>
+        熟练使用<code>css</code>框架<code>tailwindcss</code>, 预处理库<code>less</code>,
+        <code>sass</code>等
+      </li>
+      <li>
+        熟练使用 <code>webpack</code>, <code>gulp</code>, <code>rollup</code>,
+        <code>vite</code> 等打包工具，并对其原理有基本的了解
+      </li>
+      <li>
+        熟练使用 <code>nodejs</code>, 及基于<code>nodejs</code>的服务端框架
+        <code>koa</code>，并且具备编写脚手架的能力
+      </li>
+      <li>熟悉 <code>http</code>, <code>https</code> 等网络相关的知识</li>
+      <li>了解持续集成，使用过 <code>gitlab</code> 和 <code>github</code> <code>ci</code></li>
+      <li>熟练使用 <code>docker</code> 容器，可独立编写镜像配置文件并实现镜像的打包</li>
+    </ul>
+    <h2
+      id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsbriefcase-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86-div"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="assets/briefcase-solid.svg" width="30px" style="padding-right: 8px" /> 工作经历
+      </div>
+    </h2>
+    <ul>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h5>收钱吧</h5>
+          2018.09-2023.3(至今)
+        </div>
+        <blockquote>
+          <ol>
+            <li>开发维护发布系统 <code>bingo</code></li>
+            <li>
+              开发维护 <code>CRM</code> 相关的系统，包括 <code>H5</code> 和 <code>pc</code> 端的项目
+            </li>
+            <li>开发维护 <code>B</code> 端 <code>H5</code>与微信小程序项目</li>
+            <li>开发维护运营平台</li>
+            <li>带实习生</li>
+          </ol>
+        </blockquote>
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h5>苏州罗想软件股份有限公司</h5>
+          2016.11-2018.09
+        </div>
+        <blockquote>
+          <ol>
+            <li>负责公司的移动端 <code>app</code> 项目的开发(利用 <code>hybrid</code> 技术)</li>
+            <li>开发维护移动端项目</li>
+            <li>开发供公司内部使用的 <code>vue</code> 组件库</li>
+            <li>后期开发维护公司的所有前端项目</li>
+          </ol>
+        </blockquote>
+      </li>
+    </ul>
+    <h2
+      id="div-style%22display-flexalign-itemscenter%22img-src%22docsassetsproject-diagram-solidsvg%22-width%2230px%22-style%22padding-right-8px%22-%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86-div"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="assets/project-diagram-solid.svg" width="30px" style="padding-right: 8px" />
+        项目经历
+      </div>
+    </h2>
+    <ul>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4><code>CRM</code> 系统及 <code>B</code> 端 <code>H5</code></h4>
+          2019.12-2023.03(至今)
+        </div>
+        <blockquote>
+          <p>
+            技术 : <code>react</code>, <code>dva</code>, <code>nextjs</code>, <code>ts</code>,
+            <code>antd</code> 等
+          </p>
+        </blockquote>
+        <p>
+          <code>crm</code> 系统包括移动端的 <code>h5</code> 项目，<code>pc</code> 端的
+          <code>spa</code> 项目。<code>spa</code> 项目就是简单的在
+          <code>cra</code> 脚手架的基础上创建的项目，添加了自动上传静态资源到
+          <code>oss</code> 的功能等。<code>h5</code> 项目是基于 <code>nextjs</code> 创建的
+          <code>ssr</code> 项目，通过 <code>webview</code> 内嵌于
+          <code>app</code> 内，添加了自动上传静态资源到 <code>oss</code> 功能；将服务的协议改成
+          <code>http2</code> ；接入性能及错误监控平台
+          <code>sentry</code> ；优化了图标（将原先的图片和字体图标变成了
+          <code>svg sprite</code>）；添加高清方案；优化了开发体验（自动获取当前
+          <code>ip</code> ，自动打开浏览器等）。项目都是基于 <code>ts</code> 开发，并通过
+          <code>docker</code> 和 <code>gitlab ci</code> 实现持续集成及自动发布。<code>B</code> 端同
+          <code>crm</code> 的 <code>h5</code> 项目。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4>运营平台</h4>
+          2019.12-2023.03(至今)
+        </div>
+        <blockquote>
+          <p>
+            技术 : <code>react</code>, <code>umi</code>, <code>eggjs</code>, <code>antd</code>,
+            <code>amap</code> 等
+          </p>
+        </blockquote>
+        <p>
+          运营平台是传统的 <code>spa</code> 项目，并通过
+          <code>eggjs</code> 创建代理服务。项目是传统的管理平台，其中比较有挑战的是，结合
+          <code>amap</code> 实现的一些业务需求（如片区划分，地图模式派工功能等）；图片裁截功能（基于
+          <code>cropperjs</code> 实现）。通过 <code>docker</code> 和
+          <code>gitlab ci</code> 实现持续集成及自动发布。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4><code>bingo</code> 发布系统</h4>
+          2018.11-2019.01
+        </div>
+        <blockquote>
+          <p>技术 : <code>react</code>, <code>antd</code>, <code>eggjs</code> 等</p>
+        </blockquote>
+        <p>
+          <code>bingo</code> 是基于
+          <code>k8s</code>
+          的集成发布系统，解决了项目发布的时间不灵活，有损，及无法灰度等问题。项目中主要负责前端界面及与数据库的交互（项目为
+          <code>nodejs</code> 项目），与 <code>k8s</code> 服务交互由
+          <code>java</code> 提供接口，同时针对页面渲染耗时问题做了 <code>webpakc</code> 打包优化等。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4>通融铸造 <code>MES</code> 项目 <code>app</code> 开发</h4>
+          2018.04-2018.08
+        </div>
+        <blockquote>
+          <p>技术 : <code>ionic</code>, <code>cordova</code> 等</p>
+        </blockquote>
+        <p>
+          利用 <code>hybrid</code> 技术，开发与金属冶炼工作流反馈相关的工业平板
+          <code>app</code
+          >。项目中负责整个前端界面的开发，并对项目做了一些优化，如将公共的部分组件化，模块化等，同时将数据与模板分离，方便后期更新与维护。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4>公司 <code>ERP</code> 系统 <code>PWA</code> 和微信小程序项目</h4>
+          2018.06-2018.07
+        </div>
+        <blockquote>
+          <p>技术 : <code>PWA</code> 和微信小程序相关技术</p>
+        </blockquote>
+        <p>
+          利用 <code>PWA</code> 和微信小程序技术栈，开发公司 <code>ERP</code> 系统的
+          <code>PWA</code> 和微信小程序应用。项目中负责整个前端界面的开发，通过项目对
+          <code>PWA</code>
+          和微信小程序相关技术有了一个基本的了解。这两个项目目主要是做一个技术储备。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4>公司内部的 <code>vue</code> 组件库</h4>
+          2017.11-2018.05
+        </div>
+        <blockquote>
+          <p>技术 : <code>vue</code>, <code>threejs</code>, <code>canvas</code> 等</p>
+        </blockquote>
+        <p>
+          因项目需要，但目前已有的组件库引用及使用不友好，所以开发供公司内部使用的
+          <code>vue</code>
+          组件库，以提高开发效率，及增加可维护性。如事件日历组件，悬浮球功能组件，<code>3D</code>
+          全景组件，图片合成组件等。
+        </p>
+        <hr />
+      </li>
+      <li>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h4>个人开源项目</h4>
+        </div>
+        <blockquote>
+          <p>
+            技术 : <code>react</code>, <code>webpack</code>, <code>rollup</code>, <code>gulp</code>,
+            <code>vue</code>, <code>ts</code>, <code>nodejs</code>, <code>lerna</code>,
+            <code>picocolors</code>, <code>cross-spawn</code> 等
+          </p>
+        </blockquote>
+        <ol>
+          <li>
+            <a href="https://github.com/YuanBingrui/open-browser"><code>open-browser</code></a>
+            是一个在开发环境服务启动成功后自动打开浏览器的插件，增加了自动获取局域网<code>ip</code>地址的功能,
+            以及对<code>penChrome.applescript</code>脚本的增强。
+          </li>
+          <li>
+            <a href="https://github.com/YuanBingrui/floating-ball"><code>floating-ball</code></a>
+            是一个类似于移动端原生的辅助触控的 <code>web</code> 端实现，目前提供了
+            <code>react</code> 和 <code>vue</code> 版本的组件。项目是基于 <code>lerna</code> 创建的
+            <code>monorepos</code>, 包括 <code>core</code>, 然后基于 <code>core</code> 实现的
+            <code>react</code>, <code>vue</code> 三个 <code>packages</code>, 利用
+            <code>ts</code> 开发，并通过 <code>rollup</code> 和 <code>gulp</code> 打包，并添加了
+            <code>github ci</code> 持续集成及自动发布到 <code>npm</code> 仓库功能。
+          </li>
+          <li>
+            <a href="https://github.com/YuanBingrui/vue-generate-cli"
+              ><code>vue-generate-cli</code></a
+            >
+            自动生成 <code>vue</code> 模版文件的 <code>cli</code>，这个项目主要是在
+            <code>vue</code>
+            刚出来时，自带的脚手架并没有提供类似的功能，所以就自己动手开发了一个，并开源出来。
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </body>
 </html>
