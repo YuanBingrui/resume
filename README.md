@@ -21,7 +21,7 @@
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/info-circle-solid.svg" width="30px" style="padding-right: 8px"> 个人信息 </div>
 
 - 求职意向：前端开发工程师
-- 工作经验：7 年
+- 工作经验：7.5 年
 - 现工作地：苏州
 
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/graduation-cap-solid.svg" width="30px" style="padding-right: 8px"> 教育经历 </div>
@@ -31,30 +31,33 @@
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/tools-solid.svg" width="30px" style="padding-right: 8px"> 技能清单 </div>
 
 - 熟练使用 `ReactJs`, `Vuejs` 等, 并对 `ReactJs` 相关的一些技术点有着基本的了解，比如 `key` 的作用，组件性能优化等
-- 熟练使用 `Typescript` 开发项目
+- 熟练使用 `Typescript` 开发项目，并在项目中有深入的使用
 - 熟练使用 `react-router`, `vue-router` 等 `spa` 路由库，并了解其原理
 - 熟练使用 `redux`, `zustand` 等 `React` 状态管理库，并了解其原理
 - 熟练使用 `Vue` 的状态管理库 `pinia`，并了解其原理
+- 熟练使用 `Flutter` 开发项目，了解其整个开发流程
 - 熟练使用 `css` 的原子框架 `tailwindcss`, `unocss`, 预处理库 `less`, `sass` 等
 - 熟练使用 `webpack`, `gulp`, `rollup`, `vite` 等打包工具，并对其原理有基本的了解
 - 熟练使用 `nodejs`, 及基于 `nodejs` 的服务端框架 `koa`，并且具备编写脚手架的能力
+- 学习并了解过 `nestjs` 框架，了解其整个开发流程
 - 熟悉 `http`, `https` 等网络相关的知识
 - 了解持续集成，使用过 `gitlab` 和 `github` `ci`
 - 熟练使用 `docker` 容器，可独立编写镜像配置文件并实现镜像的打包
-- 了解并使用过 `Rust`
 
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/briefcase-solid.svg" width="30px" style="padding-right: 8px"> 工作经历 </div>
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
     <h5>收钱吧</h5>
-    2018.09-2024.07(至今)
+    2018.09-2025.02(至今)
   </div>
 
-  > 1. 开发维护发布系统 `bingo`
-  > 2. 开发维护 `CRM` 相关的系统，包括 `H5` 和 `pc` 端的项目
-  > 3. 开发维护 `B` 端 `H5`与微信小程序项目
-  > 4. 开发维护运营平台
-  > 5. 带实习生
+  > 1. 开发维护电饱饱海外版 `AiMT Life+ app`
+  > 2. 开发维护智慧经营 B 端商品中心模块
+  > 3. 开发维护发布系统 `bingo`
+  > 4. 开发维护 `CRM` 相关的系统，包括 `H5` 和 `pc` 端的项目
+  > 5. 开发维护 `B` 端 `H5`与微信小程序项目
+  > 6. 开发维护 `SPA` 运营平台
+  > 7. 带实习生
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
     <h5>苏州罗想软件股份有限公司</h5>
@@ -69,8 +72,26 @@
 ## <div style="display: flex;align-items:center;"><img src="docs/assets/project-diagram-solid.svg" width="30px" style="padding-right: 8px"> 项目经历 </div>
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
+    <h4>海外版 <code>AiMT Life+ app</code> 开发维护</h4>
+    2024.12-2025.01.18
+  </div>
+
+  > 技术 : `flutter`, `dart` 等
+
+  `AiMT Life+ app` 主要服务于公司出海业务，目前只支持电饱饱模块，且为`to C` 项目，主要包含扫码租借充电宝，支付租金，支付押金，查看附近门店，查看租借订单等模块。采用 `flutter` 技术栈进行开发，项目的搭建，所有核心模块都是由我来负责开发。
+
+- <div style="display: flex;justify-content: space-between;align-items:center;">
+    <h4>智慧经验 <code>B</code> 端商品模块开发维护</h4>
+    2024.09-2025.02(至今)
+  </div>
+
+  > 技术 : `vue`, `weex` 等
+
+  智慧经营 `B` 端系统是一个 weex 项目，运行在收钱吧 `app` 提供的 weex 容器中，主要包含商品中心，数据中心，开店管理，营销中心等模块，我主要负责商品管理模块，主要参与的需求有商品批量修改描述，单位，提供给其他业务组商品/分类选择组件等。
+
+- <div style="display: flex;justify-content: space-between;align-items:center;">
     <h4><code>CRM</code> 系统及 <code>B</code> 端 <code>H5</code></h4>
-    2019.12-2024.07(至今)
+    2019.12-2024.08
   </div>
 
   > 技术 : `react`, `dva`, `nextjs`, `ts`, `antd` 等
@@ -81,7 +102,7 @@
 
 - <div style="display: flex;justify-content: space-between;align-items:center;">
     <h4>运营平台</h4>
-    2019.12-2024.07(至今)
+    2019.12-2024.08
   </div>
 
   > 技术 : `react`, `umi`, `eggjs`, `antd`, `amap` 等
@@ -140,7 +161,13 @@
 
   > 技术 : `react`, `webpack`, `rollup`, `gulp`, `vue`, `ts`, `nodejs`, `lerna`, `picocolors`, `cross-spawn`, `miniprogram-ci`, `miniu` 等
 
-  1. [`open-browser`](https://github.com/YuanBingrui/open-browser) 是一个在开发环境服务启动成功后自动打开浏览器的插件，增加了自动获取局域网 `ip` 地址的功能, 以及对 `penChrome.applescript` 脚本的增强。
+  1. [`open-browser`](https://github.com/YuanBingrui/open-browser) 是一个在开发环境服务启动成功后自动打开浏览器的插件，增加了自动获取局域网 `ip` 地址的功能, 以及对 `openChrome.applescript` 脚本的增强。
   2. [`miniapp-uploader`](https://github.com/iFiring/miniapp-uploader) 是微信/支付宝小程序上传工具，包含初始化和上传命令，上传命令支持传入版本，描述和机器人序号等参数，包括自动推送支付宝二维码功能, 这是我参与的开源项目。
   3. [`floating-ball`](https://github.com/YuanBingrui/floating-ball) 是一个类似于移动端原生的辅助触控的 `web` 端实现，目前提供了 `react` 和 `vue` 版本的组件。项目是基于 `lerna` 创建的 `monorepos`, 包括 `core`, 然后基于 `core` 实现的 `react`, `vue` 三个 `packages`, 利用 `ts` 开发，并通过 `rollup` 和 `gulp` 打包，并添加了 `github ci` 持续集成及自动发布到 `npm` 仓库功能。
   4. [`vue-generate-cli`](https://github.com/YuanBingrui/vue-generate-cli) 自动生成 `vue` 模版文件的 `cli`，这个项目主要是在 `vue` 刚出来时，自带的脚手架并没有提供类似的功能，所以就自己动手开发了一个，并开源出来。
+
+- <div style="display: flex;justify-content: space-between;align-items:center;">
+    <h4>个人爱好</h4>
+  </div>
+
+  > 阅读，跑步，健身，羽毛球，烹饪
